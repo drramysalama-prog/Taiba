@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ملف المريض | Taiba Home Rehab</title>
+
+<style>
+:root{
+  --green:#173f35;
+  --green2:#245b4c;
+  --gold:#b8954a;
+  --cream:#f7f3e9;
+  --white:#ffffff;
+  --muted:#777;
+  --border:#e5dfd2;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--green);
+  font-family:Arial,sans-serif;
+}
+
+.header{
+  background:var(--green);
+  color:white;
+  padding:22px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  font-size:12px;
+  color:#e6d6aa;
+  margin-top:5px;
+}
+
+.back{
+  background:var(--gold);
+  color:white;
+  border:0;
+  padding:11px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.container{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 20px;
+}
+
+.patient-head{
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.patient-name{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.patient-id{
+  color:var(--muted);
+  margin-top:7px;
+}
+
+.status{
+  background:#e9f7ed;
+  color:#20843b;
+  padding:10px 18px;
+  border-radius:20px;
+  font-weight:bold;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+}
+
+.card h2{
+  margin-top:0;
+  font-size:20px;
+  border-bottom:1px solid var(--border);
+  padding-bottom:12px;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.info-box{
+  background:#faf8f2;
+  padding:15px;
+  border-radius:12px;
+}
+
+.info-box small{
+  color:var(--muted);
+  display:block;
+  margin-bottom:6px;
+}
+
+.progress{
+  background:#eee;
+  height:12px;
+  border-radius:20px;
+  overflow:hidden;
+  margin:15px 0;
+}
+
+.progress div{
+  height:100%;
+  width:78%;
+  background:var(--green2);
+}
+
+.exercise{
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+.exercise b{
+  display:block;
+  margin-bottom:5px;
+}
+
+.note{
+  background:#fffaf0;
+  border-right:4px solid var(--gold);
+  padding:15px;
+  border-radius:10px;
+  line-height:1.8;
+}
+
+@media(max-width:700px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .patient-head{
+    flex-direction:column;
+    gap:15px;
+    align-items:flex-start;
+  }
+
+  .info{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="logo">
+    Taiba Home Rehab
+    <span>لوحة تحكم الدكتور</span>
+  </div>
+
+  <button class="back" onclick="window.location.href='index.html'">
+    ← العودة للوحة التحكم
+  </button>
+</header>
+
+<main class="container">
+
+  <section class="patient-head">
+    <div>
+      <div class="patient-name">أحمد محمد</div>
+      <div class="patient-id">رقم الملف: THR-001</div>
+    </div>
+
+    <div class="status">● نشط</div>
+  </section>
+
+  <div class="grid">
+
+    <section class="card">
+      <h2>👤 بيانات المريض</h2>
+
+      <div class="info">
+        <div class="info-box">
+          <small>العمر</small>
+          <strong>42 سنة</strong>
+        </div>
+
+        <div class="info-box">
+          <small>رقم الهاتف</small>
+          <strong>01000000000</strong>
+        </div>
+
+        <div class="info-box">
+          <small>تاريخ بداية البرنامج</small>
+          <strong>01 / 08 / 2026</strong>
+        </div>
+
+        <div class="info-box">
+          <small>عدد الجلسات</small>
+          <strong>12 جلسة</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🩺 الحالة والتشخيص</h2>
+
+      <div class="info-box">
+        <small>التشخيص</small>
+        <strong>تأهيل الركبة</strong>
+      </div>
+
+      <br>
+
+      <div class="info-box">
+        <small>الحالة الحالية</small>
+        <strong>تحسن جيد مع البرنامج العلاجي</strong>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🎯 أهداف التأهيل</h2>
+
+      <div class="exercise">
+        <b>استعادة مدى الحركة</b>
+        <small>تحسين حركة مفصل الركبة تدريجيًا.</small>
+      </div>
+
+      <div class="exercise">
+        <b>تقوية العضلات</b>
+        <small>زيادة القوة العضلية وتحسين الثبات.</small>
+      </div>
+
+      <div class="exercise">
+        <b>العودة للنشاط الطبيعي</b>
+        <small>العودة للأنشطة اليومية بدون ألم.</small>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📈 نسبة التقدم</h2>
+
+      <strong>78%</strong>
+
+      <div class="progress">
+        <div></div>
+      </div>
+
+      <small>التقدم العام في البرنامج العلاجي</small>
+    </section>
+
+    <section class="card">
+      <h2>🏃 البرنامج والتمارين</h2>
+
+      <div class="exercise">
+        <b>تمرين تقوية العضلة الرباعية</b>
+        <small>3 مجموعات × 10 تكرارات</small>
+      </div>
+
+      <div class="exercise">
+        <b>تمارين مدى الحركة</b>
+        <small>10 دقائق يوميًا</small>
+      </div>
+
+      <div class="exercise">
+        <b>تمارين التوازن</b>
+        <small>5 دقائق × مرتين يوميًا</small>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📝 آخر ملاحظات الدكتور</h2>
+
+      <div class="note">
+        المريض ملتزم بالبرنامج العلاجي، ويوجد تحسن ملحوظ في الحركة
+        ونسبة الألم أقل من الزيارة السابقة.
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+</body>
+</html>

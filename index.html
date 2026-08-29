@@ -97,6 +97,15 @@ table{width:100%;border-collapse:collapse}th,td{padding:14px 9px;border-bottom:1
 function filterPatients(){
   const q=document.getElementById('search').value.trim().toLowerCase();
   document.querySelectorAll('#patients tr').forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q)?'':'none');
+  <script>
+document.querySelectorAll("nav button").forEach(function(btn) {
+  if (btn.innerText.includes("المرضى")) {
+    btn.onclick = function() {
+      window.location.href = "login.html";
+    };
+  }
+});
+</script>
 }
 </script>
 </body></html>

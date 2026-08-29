@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taiba Home Rehab - المرضى</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f7f3e9;
+  color:#173f35;
+}
+
+header{
+  background:#173f35;
+  color:white;
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  font-size:13px;
+  color:#d8b45a;
+  margin-top:5px;
+}
+
+.container{
+  max-width:1200px;
+  margin:25px auto;
+  padding:0 18px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+h1{
+  margin:0;
+  font-size:28px;
+}
+
+.subtitle{
+  color:#777;
+  margin-top:7px;
+}
+
+button{
+  border:0;
+  border-radius:10px;
+  padding:12px 18px;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.add{
+  background:#b8954a;
+  color:white;
+}
+
+.search{
+  background:white;
+  padding:15px;
+  border-radius:14px;
+  box-shadow:0 3px 15px #00000012;
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 4px 18px #00000012;
+  border:1px solid #eee;
+}
+
+.patient{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:15px;
+}
+
+.patient h2{
+  margin:0 0 7px;
+  font-size:19px;
+}
+
+.patient small{
+  color:#777;
+}
+
+.badge{
+  background:#e8f4ec;
+  color:#19823b;
+  padding:6px 9px;
+  border-radius:20px;
+  font-size:12px;
+}
+
+.info{
+  line-height:1.9;
+  color:#555;
+  margin-bottom:15px;
+}
+
+.open{
+  width:100%;
+  background:#173f35;
+  color:white;
+}
+
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .top{
+    flex-direction:column;
+    align-items:stretch;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    Taiba Home Rehab
+    <span>لوحة إدارة المرضى</span>
+  </div>
+
+  <button onclick="window.location.href='index.html'">
+    الرئيسية
+  </button>
+</header>
+
+<div class="container">
+
+  <div class="top">
+    <div>
+      <h1>المرضى</h1>
+      <div class="subtitle">
+        إدارة ومتابعة ملفات المرضى والبرامج التأهيلية
+      </div>
+    </div>
+
+    <button class="add" onclick="alert('سيتم إضافة مريض جديد في الخطوة القادمة')">
+      + إضافة مريض
+    </button>
+  </div>
+
+  <div class="search">
+    <input
+      id="search"
+      type="text"
+      placeholder="🔎 ابحث باسم المريض..."
+      oninput="searchPatients()"
+    >
+  </div>
+
+  <div class="grid" id="patients">
+
+    <div class="card">
+      <div class="patient">
+        <div>
+          <h2>أحمد محمد</h2>
+          <small>تأهيل الركبة</small>
+        </div>
+        <span class="badge">نشط</span>
+      </div>
+
+      <div class="info">
+        📅 آخر متابعة: اليوم<br>
+        💪 نسبة الالتزام: 92%<br>
+        🏃 البرنامج: تأهيل الركبة
+      </div>
+
+      <button class="open"
+        onclick="alert('سيتم فتح ملف أحمد محمد في الخطوة القادمة')">
+        فتح ملف المريض
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="patient">
+        <div>
+          <h2>محمد علي</h2>
+          <small>آلام أسفل الظهر</small>
+        </div>
+        <span class="badge">نشط</span>
+      </div>
+
+      <div class="info">
+        📅 آخر متابعة: أمس<br>
+        💪 نسبة الالتزام: 78%<br>
+        🏃 البرنامج: آلام أسفل الظهر
+      </div>
+
+      <button class="open"
+        onclick="alert('سيتم فتح ملف محمد علي في الخطوة القادمة')">
+        فتح ملف المريض
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="patient">
+        <div>
+          <h2>سارة أحمد</h2>
+          <small>بعد جراحة الركبة</small>
+        </div>
+        <span class="badge">نشط</span>
+      </div>
+
+      <div class="info">
+        📅 آخر متابعة: اليوم<br>
+        💪 نسبة الالتزام: 86%<br>
+        🏃 البرنامج: ما بعد الجراحة
+      </div>
+
+      <button class="open"
+        onclick="alert('سيتم فتح ملف سارة أحمد في الخطوة القادمة')">
+        فتح ملف المريض
+      </button>
+    </div>
+
+
+    <div class="card">
+      <div class="patient">
+        <div>
+          <h2>عمر حسن</h2>
+          <small>تقوية الكتف</small>
+        </div>
+        <span class="badge">متابعة</span>
+      </div>
+
+      <div class="info">
+        📅 آخر متابعة: منذ 3 أيام<br>
+        💪 نسبة الالتزام: 65%<br>
+        🏃 البرنامج: تقوية الكتف
+      </div>
+
+      <button class="open"
+        onclick="alert('سيتم فتح ملف عمر حسن في الخطوة القادمة')">
+        فتح ملف المريض
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+function searchPatients(){
+
+  const q =
+    document.getElementById("search")
+    .value
+    .trim()
+    .toLowerCase();
+
+  document.querySelectorAll("#patients .card")
+    .forEach(card => {
+
+      const text =
+        card.innerText.toLowerCase();
+
+      card.style.display =
+        text.includes(q) ? "" : "none";
+
+    });
+}
+</script>
+
+</body>
+</html>
